@@ -27,7 +27,8 @@ export default {
 					headers: corsHeaders,
 				});
 			}
-			throw new Error("oops");
+			const { results } = await db.prepare('SELECT * FROM notes').all();
+			return Response.json(results, { headers: corsHeaders });
 		}
 
 		if (url.pathname === '/api/config') {

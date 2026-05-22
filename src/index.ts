@@ -28,7 +28,6 @@ export default {
 				});
 			}
 			throw new Error("oops");
-			return Response.json(results, { headers: corsHeaders });
 		}
 
 		if (url.pathname === '/api/config') {

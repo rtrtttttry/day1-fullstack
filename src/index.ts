@@ -27,7 +27,7 @@ export default {
 					headers: corsHeaders,
 				});
 			}
-			const { results } = await db.prepare('SELECT * FROM notes').all();
+			throw new Error("oops");
 			return Response.json(results, { headers: corsHeaders });
 		}
 
